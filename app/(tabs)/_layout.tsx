@@ -1,57 +1,97 @@
-import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
-
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+import { Tabs } from "expo-router";
+import { useColorScheme, View } from "react-native";
+import FontAwesome from "@expo/vector-icons/Feather";
+import Colors from "../../constants/Colors";
+import MyTabBar from "../../components/tabs";
+import { SimpleLineIcons } from "@expo/vector-icons";
+import Avatar from "../../components/ui/avatar";
+import { Text } from "@/components/Themed";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const tabs = {
+    Inicio: {
+      labelStyle: {
+        color: "#5B37B7",
+      },
+      icon: {
+        // component: /* ICON COMPONENT */,
+        activeColor: "#5B37F3",
+        inactiveColor: "rgba(0,0,0,1)",
+      },
+      background: {
+        activeColor: "#5812DC",
+        inactiveColor: "#6534C2",
+      },
+    },
+    Movimientos: {
+      labelStyle: {
+        color: "#1194AA",
+      },
+      icon: {
+        // component: /* ICON COMPONENT */,
+        activeColor: "rgba(17,148,170,1)",
+        inactiveColor: "rgba(0,0,0,1)",
+      },
+      background: {
+        activeColor: "#D34300",
+        inactiveColor: "#BC4C17",
+      },
+    },
+  };
 
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
+      screenOptions={({ route }) => ({
+        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+      })}
+      tabBar={(props) => <MyTabBar tabs={tabs} {...props} />}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Inicio",
+          tabBarIcon: ({ color }) => {
+            return <FontAwesome size={25} name="home" color={color} />;
+          },
           headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
+            <View
+              className="flex-row gap-4 items-center "
+              style={{ backgroundColor: "none" }}
+            >
+              <Text className="font-semibold text-white">Welcome Miley</Text>
+              <Avatar
+                // urlImg="https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                source={{
+                  uri: "https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+                }}
+                style={{
+                  marginRight: 15,
+                }}
+              />
+            </View>
           ),
+          headerTitleStyle: {
+            display: "none",
+          },
+          headerStyle: {
+            backgroundColor: Colors[colorScheme ?? "light"].header,
+          },
+          headerShadowVisible: false,
+          // headerShown: false,
+          // headerTitleAllowFontScaling: false,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="movimientos"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Movimientos",
+          tabBarIcon: ({ color }) => (
+            <SimpleLineIcons name="chart" size={25} color={color} />
+          ),
+          headerStyle: {
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+          },
         }}
       />
     </Tabs>
