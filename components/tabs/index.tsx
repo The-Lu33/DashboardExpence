@@ -45,7 +45,7 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
     <Animated.View
       style={{
         width: "100%",
-        height: 64,
+        height: 55,
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",

@@ -18,30 +18,30 @@ export default function ItemMovement({
   const colorsAndIcons: { [key: string]: any } = {
     INCOME: {
       FREELANCE: {
-        bg: "#83f3ca",
+        bg: "#8cfcd3",
         icon: require("@/assets/images/freelance.png"),
       },
     },
     EXPENSE: {
       SHOPPING: {
-        bg: "#FCEED4",
+        bg: "#fcedd1",
         icon: require("@/assets/images/shopping.png"),
       },
       FOOD: {
-        bg: "#ffd8da",
+        bg: "#fed5d7",
         icon: require("@/assets/images/food.png"),
       },
     },
   };
   const icon = colorsAndIcons[typeMove][category].icon;
-  console.log(icon);
+  // console.log(colorsAndIcons[typeMove][category].bg);
   return (
     <View className="flex-row justify-between w-full px-2 my-2">
       <View className="flex-row ">
         <View
           className={`p-3 w-14 justify-center items-center rounded-2xl bg-[${colorsAndIcons[typeMove][category].bg}] mr-2`}
         >
-          <Image  source={icon} />
+          <Image source={icon} />
         </View>
         <View className="text-start flex-col justify-evenly">
           <Text

@@ -1,8 +1,9 @@
 import { Image, SafeAreaView, View, useColorScheme } from "react-native";
-import { Text } from "../../components/Themed";
+
 import Line from "@/components/charts/line";
 import RecentMovement from "@/components/movement/recent-movement";
 import Colors from "@/constants/Colors";
+import { Text } from "@/components/Themed";
 
 export default function Home() {
   const theme = useColorScheme();

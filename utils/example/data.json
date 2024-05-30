@@ -1,0 +1,123 @@
+[
+  {
+    "id": "2",
+    "typeMove": "INCOME",
+    "category": "FREELANCE",
+    "description": "Software",
+    "mount": 500,
+    "time": "05:00",
+    "date": "2 abril 2002"
+
+  },
+  {
+    "id": "1",
+    "typeMove": "EXPENSE",
+    "category": "SHOPPING",
+    "description": "Lenceria",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "3 abril 2002"
+
+  },
+
+  {
+    "id": "4",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "4 abril 2002"
+  },
+  {
+    "id": "5",
+    "typeMove": "INCOME",
+    "category": "FREELANCE",
+    "description": "Software",
+    "mount": 500,
+    "time": "05:00",
+    "date": "5 abril 2002"
+  },
+  {
+    "id": "6",
+    "typeMove": "EXPENSE",
+    "category": "SHOPPING",
+    "description": "Lenceria",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "7 abril 2002"
+  },
+
+  {
+    "id": "3",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "7 abril 2002"
+  },
+  {
+    "id": "7",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "8 abril 2002"
+  },
+  {
+    "id": "8",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "8 abril 2002"
+  },
+  {
+    "id": "9",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "8 abril 2002"
+  },
+  {
+    "id": "11",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "8 abril 2002"
+  },
+  {
+    "id": "12",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "8 abril 2002"
+  },
+  {
+    "id": "13",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -20.0,
+    "time": "10:00",
+    "date": "8 abril 2002"
+  },
+  {
+    "id": "14",
+    "typeMove": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -30.0,
+    "time": "10:00",
+    "date": "8 abril 2002"
+  }
+]

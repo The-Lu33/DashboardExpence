@@ -1,12 +1,11 @@
 import { Tabs } from "expo-router";
 import { useColorScheme, View } from "react-native";
 import FontAwesome from "@expo/vector-icons/Feather";
-import Colors from "../../constants/Colors";
-import MyTabBar from "../../components/tabs";
+import Colors from "@/constants/Colors";
 import { SimpleLineIcons } from "@expo/vector-icons";
-import Avatar from "../../components/ui/avatar";
+import MyTabBar from "@/components/tabs/index";
+import Avatar from "@/components/ui/avatar";
 import { Text } from "@/components/Themed";
-
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   const tabs = {
@@ -24,7 +23,7 @@ export default function TabLayout() {
         inactiveColor: "#6534C2",
       },
     },
-    Movimientos: {
+    Transacciones: {
       labelStyle: {
         color: "#1194AA",
       },
@@ -83,15 +82,21 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="movimientos"
+        name="transactions"
         options={{
-          title: "Movimientos",
+          title: "Transacciones",
           tabBarIcon: ({ color }) => (
             <SimpleLineIcons name="chart" size={25} color={color} />
           ),
           headerStyle: {
             backgroundColor: Colors[colorScheme ?? "light"].background,
           },
+          headerTitleStyle: {
+            display: "none",
+          },
+          headerShadowVisible: false,
+          headerShown: false,
+          headerTitleAllowFontScaling: false,
         }}
       />
     </Tabs>
