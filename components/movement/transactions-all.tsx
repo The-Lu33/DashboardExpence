@@ -1,13 +1,9 @@
 import React from "react";
-import { SafeAreaView } from "react-native";
-// import { FlatList } from "react-native-gesture-handler";
-import data from "@/utils/example/data.json";
 import { ItemMovementInterface } from "@/types/types";
 import ItemMovement from "@/components/movement/item-movement";
 import { FlatList } from "react-native";
 import { Text, View } from "@/components/Themed";
 
-const movement: ItemMovementInterface[] = data as ItemMovementInterface[];
 
 export default function TransactionsAll({
   transactions,

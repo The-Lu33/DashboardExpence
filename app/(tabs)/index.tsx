@@ -1,19 +1,28 @@
 import { Image, SafeAreaView, View, useColorScheme } from "react-native";
+import data from "@/utils/example/data.json";
 
 import Line from "@/components/charts/line";
 import RecentMovement from "@/components/movement/recent-movement";
 import Colors from "@/constants/Colors";
 import { Text } from "@/components/Themed";
-
+interface LineData {
+  value: number;
+  date: string;
+}
 export default function Home() {
   const theme = useColorScheme();
 
+  const lineData: LineData[] = data.map((item) => ({
+    value: item.mount,
+    date: item.date,
+  }));
+  console.log(lineData);
   return (
     <SafeAreaView
       className=" h-screen"
       style={{
         backgroundColor: Colors[theme ?? "light"].background,
-        flex:1
+        flex: 1,
       }}
     >
       {/* <StatusBar style="auto" /> */}
@@ -44,8 +53,8 @@ export default function Home() {
           </View>
         </View>
       </View>
-      <View className="w-full mt-2 flex justify-start">
-        <Line />
+      <View className="w-full  mt-2 flex justify-start">
+        <Line data={lineData} />
       </View>
       <View className="mt-6 px-2 flex-1">
         <RecentMovement />

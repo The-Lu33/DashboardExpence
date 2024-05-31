@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, TouchableOpacity, BackHandler } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  BackHandler,
+  useColorScheme,
+} from "react-native";
 import { BlurView } from "expo-blur";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -21,6 +27,7 @@ export default function FilterSelector({
   filter,
   selectedFilters,
 }: FilterSelectorProps) {
+  const theme = useColorScheme();
 
   useEffect(() => {
     const backHandler = BackHandler.addEventListener(
@@ -70,8 +77,25 @@ export default function FilterSelector({
             onPress={onClose}
             activeOpacity={1}
           />
-          <View style={{ width: 300, height: 300, backgroundColor: "white" }}>
-            <View style={{ flexWrap: "wrap", flexDirection: "row" }}>
+          <View
+            style={{
+              width: 300,
+              height: 200,
+              backgroundColor: theme === "light" ? "white" : "#373636",
+              borderRadius: 10,
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 2,
+            }}
+          >
+            <View
+              style={{
+                flexWrap: "wrap",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               {filter.map((item, index) => (
                 <TouchableOpacity
                   key={index}
@@ -91,7 +115,13 @@ export default function FilterSelector({
                   }}
                   onPress={() => onSelectFilter(item.option)}
                 >
-                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: "bold",
+                      color: theme === "light" ? "black" : "white",
+                    }}
+                  >
                     {item.label}
                   </Text>
                 </TouchableOpacity>

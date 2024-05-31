@@ -21,6 +21,10 @@ export default function ItemMovement({
         bg: "#8cfcd3",
         icon: require("@/assets/images/freelance.png"),
       },
+      SALARY: {
+        bg: "#8cfcd3",
+        icon: require("@/assets/images/salary.png"),
+      },
     },
     EXPENSE: {
       SHOPPING: {
@@ -31,6 +35,14 @@ export default function ItemMovement({
         bg: "#fed5d7",
         icon: require("@/assets/images/food.png"),
       },
+      TRANSPORTATION: {
+        bg: "#BDDCFF",
+        icon: require("@/assets/images/car.png"),
+      },
+      SUBSCRIPTION: {
+        bg: "#CAAEFF",
+        icon: require("@/assets/images/subscription.png"),
+      },
     },
   };
   const icon = colorsAndIcons[typeMove][category].icon;
@@ -39,7 +51,10 @@ export default function ItemMovement({
     <View className="flex-row justify-between w-full px-2 my-2">
       <View className="flex-row ">
         <View
-          className={`p-3 w-14 justify-center items-center rounded-2xl bg-[${colorsAndIcons[typeMove][category].bg}] mr-2`}
+          className={`p-3 w-14 justify-center items-center rounded-2xl  mr-2`}
+          style={{
+            backgroundColor: colorsAndIcons[typeMove][category].bg,
+          }}
         >
           <Image source={icon} />
         </View>

@@ -12,10 +12,10 @@ export default function Avatar(props: ImageProps) {
       {...otherProps}
     >
       <View
-        className="border-purple-500"
+        className="border-purple-500 w-full h-full"
         style={{ borderWidth: 2, borderRadius: 9999 }}
       >
-        <Image className="w-8 h-8 rounded-full " source={imageSource} />
+        <Image className="w-full h-full rounded-full " source={imageSource} />
       </View>
     </View>
   );

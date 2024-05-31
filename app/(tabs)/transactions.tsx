@@ -44,7 +44,6 @@ export default function Transactions() {
     }
   }, [selectedFilters, data]);
   
-  console.log('Filtered Transactions:', filteredTransactions);
   const toggleFilter = (option: string) => {
     setSelectedFilters((prevFilters) => {
       if (prevFilters.includes(option)) {

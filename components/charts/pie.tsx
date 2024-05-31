@@ -1,20 +1,25 @@
-import {  useColorScheme } from "react-native";
+import { useColorScheme, Text } from "react-native";
 import { PieChart, PieChartPro } from "react-native-gifted-charts";
-import { Text ,View} from "../Themed";
-
-export default function Pie() {
-  const pieData = [
-    {
-      value: 47,
-      color: "#009FFF",
-      gradientCenterColor: "#006DFF",
-      focused: true,
-    },
-    { value: 40, color: "#93FCF8", gradientCenterColor: "#3BE9DE" },
-    { value: 16, color: "#BDB2FA", gradientCenterColor: "#8F80F3" },
-    { value: 3, color: "#FFA5BA", gradientCenterColor: "#FF7F97" },
-  ];
-
+import { View } from "../Themed";
+import { NumberFormatter } from "@/utils/formatters";
+type PieDataItem = {
+  category: string;
+  value: number;
+  color: string;
+  gradientCenterColor: string;
+  focused?: boolean;
+};
+export default function Pie({
+  data,
+  total,
+}: {
+  data: PieDataItem[];
+  total: number;
+}) {
+  const pieData = data.map((item) => ({
+    ...item,
+    value: Math.abs(item.value),
+  }));
   const renderDot = (color: string) => {
     return (
       <View
@@ -81,36 +86,31 @@ export default function Pie() {
   };
 
   return (
-  
-      <View
-        
-        className="border-red-500 border px-4 py-2"
-      >
-     
-        <View style={{ padding: 20, alignItems: "center" }}>
-          <PieChart
-            data={pieData}
-            donut
-            showGradient
-            // sectionAutoFocus
-            focusOnPress
-            radius={90}
-            innerRadius={55}
-            innerCircleColor={"#232B5D"}
-            centerLabelComponent={() => {
-              return (
-                
-                  <Text
-                    className="font-bold text-base"
-                  >
-                    500.000,00$
-                  </Text>
-                 
-              );
-            }}
-          />
-        </View>
-        {renderLegendComponent()}
+    <View className="r px-4 py-2">
+      <View style={{ padding: 20, alignItems: "center" }}>
+        <PieChart
+          data={pieData}
+          strokeColor="white"
+          strokeWidth={1}
+          donut
+          showGradient
+          sectionAutoFocus
+          // focusOnPressinnerCircleColor="#414141"
+          innerCircleBorderWidth={1}
+          innerCircleBorderColor={"white"}
+          radius={120}
+          innerRadius={60}
+          innerCircleColor={"white"}
+          centerLabelComponent={() => {
+            return (
+              <Text className="font-bold text-xl">
+                {NumberFormatter(total)}$
+              </Text>
+            );
+          }}
+        />
+      </View>
+      {/* {renderLegendComponent()} */}
     </View>
   );
 }

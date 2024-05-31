@@ -1,8 +1,12 @@
 import { Tabs } from "expo-router";
 import { useColorScheme, View } from "react-native";
-import FontAwesome from "@expo/vector-icons/Feather";
 import Colors from "@/constants/Colors";
-import { SimpleLineIcons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  Feather,
+  FontAwesome,
+  SimpleLineIcons,
+} from "@expo/vector-icons";
 import MyTabBar from "@/components/tabs/index";
 import Avatar from "@/components/ui/avatar";
 import { Text } from "@/components/Themed";
@@ -24,9 +28,6 @@ export default function TabLayout() {
       },
     },
     Transacciones: {
-      labelStyle: {
-        color: "#1194AA",
-      },
       icon: {
         // component: /* ICON COMPONENT */,
         activeColor: "rgba(17,148,170,1)",
@@ -35,6 +36,28 @@ export default function TabLayout() {
       background: {
         activeColor: "#D34300",
         inactiveColor: "#BC4C17",
+      },
+    },
+    Report: {
+      icon: {
+        // component: /* ICON COMPONENT */,
+        activeColor: "rgba(17,148,170,1)",
+        inactiveColor: "rgba(0,0,0,1)",
+      },
+      background: {
+        activeColor: "#FCAC12",
+        inactiveColor: "#FFC350",
+      },
+    },
+    Perfil: {
+      icon: {
+        // component: /* ICON COMPONENT */,
+        activeColor: "rgba(17,148,170,1)",
+        inactiveColor: "rgba(0,0,0,1)",
+      },
+      background: {
+        activeColor: "#7F3DFF",
+        inactiveColor: "#A87AFF",
       },
     },
   };
@@ -66,6 +89,8 @@ export default function TabLayout() {
                 }}
                 style={{
                   marginRight: 15,
+                  width: 40,
+                  height: 40,
                 }}
               />
             </View>
@@ -86,7 +111,43 @@ export default function TabLayout() {
         options={{
           title: "Transacciones",
           tabBarIcon: ({ color }) => (
-            <SimpleLineIcons name="chart" size={25} color={color} />
+            <FontAwesome name="clock-o" size={24} color={color} />
+          ),
+          headerStyle: {
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+          },
+          headerTitleStyle: {
+            display: "none",
+          },
+          headerShadowVisible: false,
+          headerShown: false,
+          headerTitleAllowFontScaling: false,
+        }}
+      />
+      <Tabs.Screen
+        name="report"
+        options={{
+          title: "Report",
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="piechart" size={24} color={color} />
+          ),
+          headerStyle: {
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+          },
+          headerTitleStyle: {
+            display: "none",
+          },
+          headerShadowVisible: false,
+          headerShown: false,
+          headerTitleAllowFontScaling: false,
+        }}
+      />
+      <Tabs.Screen
+        name="user"
+        options={{
+          title: "Perfil",
+          tabBarIcon: ({ color }) => (
+            <Feather name="user" size={24} color={color} />
           ),
           headerStyle: {
             backgroundColor: Colors[colorScheme ?? "light"].background,

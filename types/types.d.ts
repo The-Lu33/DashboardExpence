@@ -1,4 +1,10 @@
-type Category = "food" | "shopping" | "freelance";
+type Category =
+  | "FOOD"
+  | "SHOPPING"
+  | "FREELANCE"
+  | "SALARY"
+  | "TRANSPORTATION"
+  | "SUBSCRIPTION";
 type TypeMovement = "INCOME" | "EXPENSE";
 export interface ItemMovementInterface {
   id: string;
