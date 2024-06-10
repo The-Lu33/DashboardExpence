@@ -15,3 +15,11 @@ export interface ItemMovementInterface {
   time: string;
   date: string;
 }
+
+export interface UserInterface {
+  id: string;
+  name: string;
+  last_name: string;
+  email: string;
+  img: string;
+}

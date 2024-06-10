@@ -16,7 +16,7 @@ export default function Home() {
     value: item.mount,
     date: item.date,
   }));
-  console.log(lineData);
+  // console.log(lineData);
   return (
     <SafeAreaView
       className=" h-screen"
