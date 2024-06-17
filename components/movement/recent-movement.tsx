@@ -14,7 +14,7 @@ export default function RecentMovement() {
         data={movement}
         renderItem={({ item }) => (
           <ItemMovement
-            typeMove={item.typeMove}
+            type_move={item.type_move}
             id={item.id}
             category={item.category}
             description={item.description}

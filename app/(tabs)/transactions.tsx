@@ -38,7 +38,7 @@ export default function Transactions() {
       return data.filter((transaction) => {
         // Verificar si la categoría de la transacción o el tipo de movimiento están incluidos en los filtros seleccionados
         const categoryMatch = selectedFilters.includes(transaction.category);
-        const typeMoveMatch = selectedFilters.includes(transaction.typeMove);
+        const typeMoveMatch = selectedFilters.includes(transaction.type_move);
         return categoryMatch || typeMoveMatch;
       });
     }

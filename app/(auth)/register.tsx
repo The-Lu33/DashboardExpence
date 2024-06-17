@@ -1,10 +1,12 @@
-import LoginForm from "@/components/forms/login-form";
+import RegisterForm from "@/components/forms/register-form";
 import { Text } from "@/components/Themed";
 import Colors from "@/constants/Colors";
-import { SafeAreaView, useColorScheme, View } from "react-native";
+import { SafeAreaView, useColorScheme } from "react-native";
+import { View } from "react-native";
 
-export default function Login() {
+export default function Register() {
   const theme = useColorScheme();
+
   return (
     <SafeAreaView
       className="h-screen w-full "
@@ -23,11 +25,13 @@ export default function Login() {
         }}
         className="w-full h-full px-4 rounded-t-3xl"
       >
-        <View className="mb-40 mt-2">
-          <Text className="text-3xl font-bold">Welcome Back</Text>
-          <Text className="text-lg font-light">Welcome back to Dashboard</Text>
+        <View className="mb-40 mt-2 relative">
+          <Text className="text-3xl font-bold">
+            Welcome to your Personal Dashboard
+          </Text>
+          <Text className="text-lg font-light">the best way to keep track</Text>
         </View>
-        <LoginForm />
+        <RegisterForm />
       </View>
     </SafeAreaView>
   );

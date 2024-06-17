@@ -8,7 +8,7 @@ interface CategoryColorsAndIcons {
 
 export default function ItemMovement({
   category,
-  typeMove,
+  type_move,
   description,
   mount,
   time,
@@ -45,15 +45,15 @@ export default function ItemMovement({
       },
     },
   };
-  const icon = colorsAndIcons[typeMove][category].icon;
-  // console.log(colorsAndIcons[typeMove][category].bg);
+  const icon = colorsAndIcons[type_move][category].icon;
+  // console.log(colorsAndIcons[type_move][category].bg);
   return (
     <View className="flex-row justify-between w-full px-2 my-2">
       <View className="flex-row ">
         <View
           className={`p-3 w-14 justify-center items-center rounded-2xl  mr-2`}
           style={{
-            backgroundColor: colorsAndIcons[typeMove][category].bg,
+            backgroundColor: colorsAndIcons[type_move][category].bg,
           }}
         >
           <Image source={icon} />
@@ -80,7 +80,7 @@ export default function ItemMovement({
       <View className="text-end flex-col justify-evenly">
         <Text
           className={`${
-            typeMove === "EXPENSE" ? "text-[#fd3c4a]" : "text-[#00a86b]"
+            type_move === "EXPENSE" ? "text-[#fd3c4a]" : "text-[#00a86b]"
           } font-semibold text-base`}
         >
           ${mount}

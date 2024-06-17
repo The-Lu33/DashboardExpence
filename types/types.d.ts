@@ -8,7 +8,7 @@ type Category =
 type TypeMovement = "INCOME" | "EXPENSE";
 export interface ItemMovementInterface {
   id: string;
-  typeMove: TypeMovement | string;
+  type_move: TypeMovement | string;
   category: Category | string;
   description: string;
   mount: float | number | string;

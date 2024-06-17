@@ -7,11 +7,12 @@ export default function AppNav() {
   const { userToken, user } = useAuth();
   const router = useRouter();
 
+  // console.log(userToken, user);
   useEffect(() => {
-    if (userToken && user) {
-      router.replace("(tabs)");
-    } else {
+    if (!userToken && !user) {
       router.replace("login");
+    } else {
+      router.replace("home");
     }
   }, [userToken, user]);
 

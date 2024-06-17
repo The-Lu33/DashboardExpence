@@ -1,7 +1,7 @@
 [
   {
     "id": "2",
-    "typeMove": "INCOME",
+    "type_move": "INCOME",
     "category": "FREELANCE",
     "description": "Software",
     "mount": 500,
@@ -10,7 +10,7 @@
   },
   {
     "id": "1",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "SHOPPING",
     "description": "Lenceria",
     "mount": -220.0,
@@ -20,7 +20,7 @@
 
   {
     "id": "4",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -34.0,
@@ -29,7 +29,7 @@
   },
   {
     "id": "5",
-    "typeMove": "INCOME",
+    "type_move": "INCOME",
     "category": "FREELANCE",
     "description": "Software",
     "mount": 5000,
@@ -38,7 +38,7 @@
   },
   {
     "id": "6",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "SHOPPING",
     "description": "Lenceria",
     "mount": -54.0,
@@ -48,7 +48,7 @@
 
   {
     "id": "3",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -1222.0,
@@ -57,7 +57,7 @@
   },
   {
     "id": "7",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -32.0,
@@ -66,7 +66,7 @@
   },
   {
     "id": "8",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -65.0,
@@ -75,7 +75,7 @@
   },
   {
     "id": "9",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -12.0,
@@ -84,7 +84,7 @@
   },
   {
     "id": "11",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -32.0,
@@ -93,7 +93,7 @@
   },
   {
     "id": "12",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -43.0,
@@ -102,7 +102,7 @@
   },
   {
     "id": "13",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -54.0,
@@ -111,7 +111,7 @@
   },
   {
     "id": "14",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "FOOD",
     "description": "Chuleta",
     "mount": -55.0,
@@ -120,7 +120,7 @@
   },
   {
     "id": "15",
-    "typeMove": "INCOME",
+    "type_move": "INCOME",
     "category": "SALARY",
     "description": "Chuleta",
     "mount": 500.0,
@@ -129,7 +129,7 @@
   },
   {
     "id": "16",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "SHOPPING",
     "description": "Lenceria",
     "mount": -544.0,
@@ -138,7 +138,7 @@
   },
   {
     "id": "17",
-    "typeMove": "INCOME",
+    "type_move": "INCOME",
     "category": "SALARY",
     "description": "Lenceria",
     "mount": 44.0,
@@ -147,7 +147,7 @@
   },
   {
     "id": "18",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "SUBSCRIPTION",
     "description": "NETFILX",
     "mount": -44.0,
@@ -156,7 +156,7 @@
   },
   {
     "id": "19",
-    "typeMove": "EXPENSE",
+    "type_move": "EXPENSE",
     "category": "TRANSPORTATION",
     "description": "Taxi",
     "mount": -44.0,

@@ -1,15 +1,17 @@
 import { Tabs } from "expo-router";
-import { useColorScheme, View } from "react-native";
+import { TouchableOpacity, useColorScheme, View } from "react-native";
 import Colors from "@/constants/Colors";
 import {
   AntDesign,
   Feather,
   FontAwesome,
+  Ionicons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
 import MyTabBar from "@/components/tabs/index";
 import Avatar from "@/components/ui/avatar";
 import { Text } from "@/components/Themed";
+import useAuth from "@/hooks/useAuth";
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   const tabs = {
@@ -38,6 +40,17 @@ export default function TabLayout() {
         inactiveColor: "#BC4C17",
       },
     },
+    add: {
+      icon: {
+        // component: /* ICON COMPONENT */,
+        activeColor: "rgba(17,148,170,1)",
+        inactiveColor: "rgba(0,0,0,1)",
+      },
+      background: {
+        activeColor: "#FCAC12",
+        inactiveColor: "#FFC350",
+      },
+    },
     Report: {
       icon: {
         // component: /* ICON COMPONENT */,
@@ -61,6 +74,7 @@ export default function TabLayout() {
       },
     },
   };
+  const { user } = useAuth();
 
   return (
     <Tabs
@@ -70,7 +84,7 @@ export default function TabLayout() {
       tabBar={(props) => <MyTabBar tabs={tabs} {...props} />}
     >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: "Inicio",
           tabBarIcon: ({ color }) => {
@@ -81,18 +95,24 @@ export default function TabLayout() {
               className="flex-row gap-4 items-center "
               style={{ backgroundColor: "none" }}
             >
-              <Text className="font-semibold text-white">Welcome Miley</Text>
-              <Avatar
-                // urlImg="https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-                source={{
-                  uri: "https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
-                }}
-                style={{
-                  marginRight: 15,
-                  width: 40,
-                  height: 40,
-                }}
-              />
+              <Text className="font-semibold text-white">
+                {user?.name} {user?.last_name}
+              </Text>
+              {user?.img ? (
+                <FontAwesome name="user-circle-o" size={40} color="white" />
+              ) : (
+                <Avatar
+                  // urlImg="https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+                  source={{
+                    uri: "https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+                  }}
+                  style={{
+                    marginRight: 15,
+                    width: 40,
+                    height: 40,
+                  }}
+                />
+              )}
             </View>
           ),
           headerTitleStyle: {
@@ -112,6 +132,24 @@ export default function TabLayout() {
           title: "Transacciones",
           tabBarIcon: ({ color }) => (
             <FontAwesome name="clock-o" size={24} color={color} />
+          ),
+          headerStyle: {
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+          },
+          headerTitleStyle: {
+            display: "none",
+          },
+          headerShadowVisible: false,
+          headerShown: false,
+          headerTitleAllowFontScaling: false,
+        }}
+      />
+      <Tabs.Screen
+        name="add"
+        options={{
+          title: "add",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="add-circle-sharp" size={50} color={color} />
           ),
           headerStyle: {
             backgroundColor: Colors[colorScheme ?? "light"].background,

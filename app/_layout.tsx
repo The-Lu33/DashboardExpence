@@ -34,7 +34,9 @@ export default function RootLayout() {
 
   return (
     <AuthProvider>
-      <AppNav />
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <AppNav />
+      </ThemeProvider>
     </AuthProvider>
   );
 }

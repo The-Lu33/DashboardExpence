@@ -26,13 +26,13 @@ export default function Report() {
   const [reportSelect, SetReportSelect] = useState("EXPENSE");
   const groupAndSumByCategory = (
     data: ItemMovementInterface[],
-    typeMove: "INCOME" | "EXPENSE"
+    type_move: "INCOME" | "EXPENSE"
   ): GroupedDataResult => {
     const result: { [key: string]: PieDataItem } = {};
     let total = 0;
 
     data
-      .filter((item) => item.typeMove === typeMove)
+      .filter((item) => item.type_move === type_move)
       .forEach((item) => {
         const key = item.category;
         if (!result[key]) {

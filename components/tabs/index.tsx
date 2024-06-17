@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Animated } from "react-native";
-import { Easing } from "react-native-reanimated";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Animated,
+  Easing,
+  Platform,
+} from "react-native";
 
 function MyTabBar({ state, descriptors, navigation, tabs }: any) {
   const [tab, setTab] = useState("Inicio");
   const [bg, setBg] = useState(new Animated.Value(0));
   const [textScale, setTextScale] = useState(new Animated.Value(1));
   const [iconScale, setIconScale] = useState(new Animated.Value(1));
+
   useEffect(() => {
-    // Agregar una animación para el fondo
+    // Animación de fondo
     Animated.timing(bg, {
       toValue: 1,
       duration: 500,
@@ -16,21 +23,21 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
       useNativeDriver: false,
     }).start();
 
-    // Agregar una animación para la escala del texto
+    // Animación de escala de texto e iconos
     Animated.timing(textScale, {
-      toValue: 1, // Escala deseada cuando está seleccionado
+      toValue: 1,
       duration: 1000,
       useNativeDriver: true,
     }).start();
     Animated.timing(iconScale, {
-      toValue: 1, // Escala deseada cuando está seleccionado
+      toValue: 1,
       duration: 1000,
       useNativeDriver: true,
     }).start();
-  }, [bg, textScale, iconScale]);
+  }, [tab]);
 
   const handlePressIn = () => {
-    setBg(new Animated.Value(0.5)); // Cambia el valor inicial para la animación
+    setBg(new Animated.Value(0.5)); // Valor inicial para la animación
   };
 
   const handlePressOut = () => {
@@ -45,15 +52,16 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
     <Animated.View
       style={{
         width: "100%",
-        height: 55,
+        height: Platform.OS === "ios" ? 75 : 60,
+        paddingBottom: Platform.OS === "ios" ? 15 : 0,
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
         backgroundColor: bg.interpolate({
           inputRange: [0.5, 1],
           outputRange: [
-            tabs[tab].background.inactiveColor,
-            tabs[tab].background.activeColor,
+            tabs[tab]?.background?.inactiveColor || "gray",
+            tabs[tab]?.background?.activeColor || "blue",
           ],
         }),
       }}
@@ -79,7 +87,6 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
 
           if (!isFocused && !event.defaultPrevented) {
             setBg(new Animated.Value(0));
-
             navigation.navigate(route.name, route.params);
           }
         };
@@ -90,7 +97,6 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
             target: route.key,
           });
         };
-
         return (
           <TouchableOpacity
             key={index}
@@ -103,22 +109,29 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
             style={{
-              flex: 1,
+              flex: label === "add" ? 0 : 1,
               justifyContent: "center",
               alignItems: "center",
+              // position: label
             }}
+            className={`${
+              label === "add" &&
+              "bg-white dark:bg-black w-16 h-16 mb-12 rounded-full   "
+            }`}
           >
             {options.tabBarIcon && (
               <Animated.View
                 style={{
                   transform: [{ scale: isFocused ? iconScale : 0.8 }],
-                  flex: 1,
+                  // flex: 1,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <options.tabBarIcon color={isFocused ? "white" : "gray"} />
-                {isFocused && (
+                <options.tabBarIcon
+                  color={label === "add" ? "red" : isFocused ? "white" : "gray"}
+                />
+                {label !== "add" && isFocused && (
                   <Animated.Text
                     style={{
                       color: "white",
