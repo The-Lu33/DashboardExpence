@@ -5,6 +5,7 @@ import {
   AntDesign,
   Feather,
   FontAwesome,
+  FontAwesome6,
   Ionicons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
@@ -75,7 +76,7 @@ export default function TabLayout() {
     },
   };
   const { user } = useAuth();
-
+  console.log(user);
   return (
     <Tabs
       screenOptions={({ route }) => ({
@@ -92,24 +93,33 @@ export default function TabLayout() {
           },
           headerRight: () => (
             <View
-              className="flex-row gap-4 items-center "
+              className="flex-row gap-4 items-center justify-center "
               style={{ backgroundColor: "none" }}
             >
               <Text className="font-semibold text-white">
                 {user?.name} {user?.last_name}
               </Text>
               {user?.img ? (
-                <FontAwesome name="user-circle-o" size={40} color="white" />
-              ) : (
                 <Avatar
                   // urlImg="https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
                   source={{
                     uri: "https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
                   }}
                   style={{
-                    marginRight: 15,
+                    marginRight: 12,
                     width: 40,
                     height: 40,
+                  }}
+                />
+              ) : (
+                <FontAwesome
+                  name="user-circle-o"
+                  size={32}
+                  color="white"
+                  style={{
+                    marginRight: 12,
+                    width: 32,
+                    height: 32,
                   }}
                 />
               )}
@@ -149,7 +159,7 @@ export default function TabLayout() {
         options={{
           title: "add",
           tabBarIcon: ({ color }) => (
-            <Ionicons name="add-circle-sharp" size={50} color={color} />
+            <FontAwesome6 name="add" size={35} color={color} />
           ),
           headerStyle: {
             backgroundColor: Colors[colorScheme ?? "light"].background,

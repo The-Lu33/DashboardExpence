@@ -26,7 +26,7 @@ export default function Home() {
       }}
     >
       {/* <StatusBar style="auto" /> */}
-      <View className="w-full flex  h-32 rounded-b-2xl bg-[#5B37B7] justify-end pb-8">
+      <View className="w-full flex  h-28 rounded-b-2xl bg-[#5B37B7] justify-end pb-8">
         <View className="flex-row justify-evenly">
           {/* cards */}
           <View className="w-36 h-16 bg-green-600 rounded-3xl p-2 flex-row items-center justify-center gap-x-2">

@@ -98,7 +98,9 @@ export default function RegisterForm() {
     <>
       <View className="w-full">
         <View
-          className={`border ${missingFields.name ? "border-red-500" : "border-gray-500/50"} rounded-lg flex flex-row items-center justify-start mt-6`}
+          className={`border ${
+            missingFields.name ? "border-red-500" : "border-gray-500/50"
+          } rounded-lg flex flex-row items-center justify-start mt-6`}
           style={{
             width: "100%",
             maxWidth: 450,
@@ -119,16 +121,18 @@ export default function RegisterForm() {
             placeholderTextColor={missingFields.name ? "red" : "gray"}
             underlineColorAndroid="transparent"
             style={{
-              fontSize: 20,
+              fontSize: 16,
               color: Colors[theme ?? "light"].text,
               height: "90%",
-              width: "80%",
-              marginLeft: 5,
+              width: "85%",
+              marginLeft: 4,
             }}
           />
         </View>
         <View
-          className={`border ${missingFields.lastName ? "border-red-500" : "border-gray-500/50"} rounded-lg flex flex-row items-center justify-start mt-6`}
+          className={`border ${
+            missingFields.lastName ? "border-red-500" : "border-gray-500/50"
+          } rounded-lg flex flex-row items-center justify-start mt-6`}
           style={{
             width: "100%",
             maxWidth: 450,
@@ -140,7 +144,9 @@ export default function RegisterForm() {
           <Feather
             name="user"
             size={24}
-            color={missingFields.lastName ? "red" : Colors[theme ?? "light"].text}
+            color={
+              missingFields.lastName ? "red" : Colors[theme ?? "light"].text
+            }
           />
           <TextInput
             placeholder="Last Name"
@@ -149,16 +155,18 @@ export default function RegisterForm() {
             placeholderTextColor={missingFields.lastName ? "red" : "gray"}
             underlineColorAndroid="transparent"
             style={{
-              fontSize: 20,
+              fontSize: 16,
               color: Colors[theme ?? "light"].text,
               height: "90%",
               width: "80%",
-              marginLeft: 5,
+              marginLeft: 4,
             }}
           />
         </View>
         <View
-          className={`border ${missingFields.email ? "border-red-500" : "border-gray-500/50"} rounded-lg flex flex-row items-center justify-start mt-6`}
+          className={`border ${
+            missingFields.email ? "border-red-500" : "border-gray-500/50"
+          } overflow-hidden rounded-lg flex flex-row items-center justify-start mt-6`}
           style={{
             width: "100%",
             maxWidth: 450,
@@ -179,16 +187,18 @@ export default function RegisterForm() {
             placeholderTextColor={missingFields.email ? "red" : "gray"}
             underlineColorAndroid="transparent"
             style={{
-              fontSize: 20,
+              fontSize: 16,
               color: Colors[theme ?? "light"].text,
               height: "90%",
               width: "80%",
-              marginLeft: 5,
+              marginLeft: 4,
             }}
           />
         </View>
         <View
-          className={`border ${missingFields.password ? "border-red-500" : "border-gray-500/50"} rounded-lg flex flex-row items-center justify-start mt-6`}
+          className={`border ${
+            missingFields.password ? "border-red-500" : "border-gray-500/50"
+          } rounded-lg flex flex-row items-center justify-start mt-6`}
           style={{
             width: "100%",
             maxWidth: 450,
@@ -200,29 +210,34 @@ export default function RegisterForm() {
           <Feather
             name="lock"
             size={24}
-            color={missingFields.password ? "red" : Colors[theme ?? "light"].text}
+            color={
+              missingFields.password ? "red" : Colors[theme ?? "light"].text
+            }
           />
           <TextInput
             placeholder="Password"
             placeholderTextColor={missingFields.password ? "red" : "gray"}
-            onChange={(e) => setPassword(e.nativeEvent.text)}
+            onChange={(e) => {
+              setPassword(e.nativeEvent.text);
+              setMissingFields((prev) => ({ ...prev, password: false }));
+            }}
             value={password}
-            secureTextEntry={!showPassword}
+            secureTextEntry={showPassword}
             style={{
-              fontSize: 20,
+              fontSize: 16,
               color: Colors[theme ?? "light"].text,
-              width: "80%",
+              width: "85%",
               height: "90%",
-              marginLeft: 5,
+              marginLeft: 4,
             }}
           />
           <TouchableOpacity
             style={{
-              marginLeft: 20,
+              marginLeft: 4,
             }}
             onPress={() => setShowPassword(!showPassword)}
           >
-            {!showPassword ? (
+            {showPassword ? (
               <Feather
                 name="eye"
                 size={24}
@@ -237,17 +252,17 @@ export default function RegisterForm() {
             )}
           </TouchableOpacity>
         </View>
-        <Text className="text-[#999999] mt-2">Forgot Password?</Text>
+        {/* <Text className="text-[#999999] mt-2">Forgot Password?</Text> */}
 
         <TouchableOpacity onPress={handleRegister}>
           <View className="w-[90%] flex justify-center items-center mt-8 h-16 mx-auto rounded-xl bg-[#5B37B7]">
             <Text className="text-2xl text-white">Register</Text>
           </View>
         </TouchableOpacity>
-        <View className="mx-auto flex flex-row justify-center items-center mt-40">
-          <Text className="text-lg mr-1">do you already have an account?</Text>
+        <View className="mx-auto flex flex-row justify-center items-center mt-4 ">
+          <Text className="text-sm mr-1">do you already have an account?</Text>
           <Link href={"/login"}>
-            <Text className="text-[#5B37B7] text-bold text-lg">Login</Text>
+            <Text className="text-[#5B37B7] text-bold text-sm">Login</Text>
           </Link>
         </View>
       </View>

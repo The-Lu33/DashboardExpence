@@ -23,9 +23,9 @@ export default function Login() {
         }}
         className="w-full h-full px-4 rounded-t-3xl"
       >
-        <View className="mb-40 mt-2">
+        <View className="mb-32 mt-2">
           <Text className="text-3xl font-bold">Welcome Back</Text>
-          <Text className="text-lg font-light">Welcome back to Dashboard</Text>
+          <Text className="text-base font-light">Welcome back to Dashboard</Text>
         </View>
         <LoginForm />
       </View>

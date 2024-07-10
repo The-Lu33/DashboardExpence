@@ -114,10 +114,7 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
               alignItems: "center",
               // position: label
             }}
-            className={`${
-              label === "add" &&
-              "bg-white dark:bg-black w-16 h-16 mb-12 rounded-full   "
-            }`}
+            className={`${label === "add" && "w-14 h-14 mb-14 bg-[#5B37B7] rounded-full"}`}
           >
             {options.tabBarIcon && (
               <Animated.View
@@ -129,12 +126,16 @@ function MyTabBar({ state, descriptors, navigation, tabs }: any) {
                 }}
               >
                 <options.tabBarIcon
-                  color={label === "add" ? "red" : isFocused ? "white" : "gray"}
+                  color={
+                    label === "add" ? "white" : isFocused ? "white" : "gray"
+                  }
+                 
                 />
                 {label !== "add" && isFocused && (
                   <Animated.Text
                     style={{
                       color: "white",
+                      fontSize: 12,
                       transform: [{ scale: isFocused ? textScale : 0.8 }],
                     }}
                   >

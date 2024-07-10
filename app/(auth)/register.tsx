@@ -25,7 +25,7 @@ export default function Register() {
         }}
         className="w-full h-full px-4 rounded-t-3xl"
       >
-        <View className="mb-40 mt-2 relative">
+        <View className="mb-24 mt-2 relative">
           <Text className="text-3xl font-bold">
             Welcome to your Personal Dashboard
           </Text>

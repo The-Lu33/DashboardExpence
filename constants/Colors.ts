@@ -6,7 +6,7 @@ export default {
     text: "#000",
     background: "#fff",
     header: "#5B37B7",
-
+    placeholder:'gray',
     tint: tintColorLight,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorLight,
@@ -18,5 +18,7 @@ export default {
     tint: tintColorDark,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
+    placeholder:'gray',
+
   },
 };

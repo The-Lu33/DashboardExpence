@@ -134,14 +134,14 @@ export default function Report() {
             <View className="flex flex-row justify-between items-center px-3">
               <View className="flex-row flex items-center ">
                 {renderDot(item.color)}
-                <Text className="font-bold text-lg ">{item.category}</Text>
+                <Text className="font-bold text-base ">{item.category}</Text>
               </View>
               <Text
                 className={`${
                   reportSelect === "EXPENSE"
                     ? "text-[#fd3c4a]"
                     : "text-[#00a86b]"
-                } font-bold text-xl`}
+                } font-bold text-base`}
               >
                 {item.value}$
               </Text>

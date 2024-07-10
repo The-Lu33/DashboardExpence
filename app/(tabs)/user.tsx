@@ -1,10 +1,17 @@
 import { Text, View } from "@/components/Themed";
 import Avatar from "@/components/ui/avatar";
 import Colors from "@/constants/Colors";
-import { Image, SafeAreaView, useColorScheme } from "react-native";
+import useAuth from "@/hooks/useAuth";
+import {
+  Image,
+  SafeAreaView,
+  useColorScheme,
+  TouchableOpacity,
+} from "react-native";
 
 export default function User() {
   const theme = useColorScheme();
+  const { logout } = useAuth();
   return (
     <SafeAreaView
       style={{
@@ -36,7 +43,7 @@ export default function User() {
         <View className="mt-12">
           <View className="flex flex-row px-6 mt-8 items-center ">
             <View
-              className={`p-2 w-12 justify-center items-center rounded-2xl  mr-3`}
+              className={`p-2 w-12 h-12 justify-center items-center rounded-2xl  mr-3`}
               style={{
                 backgroundColor: "#EEE5FF",
               }}
@@ -49,25 +56,27 @@ export default function User() {
                 }}
               />
             </View>
-            <Text className="text-xl font-semiBold ">Logout</Text>
+            <Text className="text-base font-semiBold ">Settings</Text>
           </View>
-          <View className="flex flex-row px-6 mt-8 items-center ">
-            <View
-              className={`p-2 w-12 justify-center items-center rounded-2xl  mr-3`}
-              style={{
-                backgroundColor: "#FFE2E4",
-              }}
-            >
-              <Image
-                source={require("@/assets/images/logout.png")}
+          <TouchableOpacity onPress={logout}>
+            <View className="flex flex-row px-6 mt-8 items-center ">
+              <View
+                className={`p-2 w-12 h-12 justify-center items-center rounded-2xl  mr-3`}
                 style={{
-                  width: 25,
-                  height: 25,
+                  backgroundColor: "#FFE2E4",
                 }}
-              />
+              >
+                <Image
+                  source={require("@/assets/images/logout.png")}
+                  style={{
+                    width: 25,
+                    height: 25,
+                  }}
+                />
+              </View>
+              <Text className="text-base font-semiBold ">Logout</Text>
             </View>
-            <Text className="text-xl font-semiBold ">Settings</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

@@ -60,7 +60,7 @@ export default function ItemMovement({
         </View>
         <View className="text-start flex-col justify-evenly">
           <Text
-            className="font-semibold text-lg"
+            className="font-semibold text-base"
             style={{
               color: Colors[theme ?? "light"].text,
             }}
@@ -68,7 +68,7 @@ export default function ItemMovement({
             {category}
           </Text>
           <Text
-            className="font-medium text-sm"
+            className="font-medium text-xs"
             style={{
               color: Colors[theme ?? "light"].text,
             }}

@@ -90,7 +90,7 @@ export default function LoginForm() {
       <View
         className={`border ${
           missingFields.email ? "border-red-500" : "border-gray-500/50"
-        } rounded-lg flex flex-row items-center justify-start `}
+        } rounded-lg flex flex-row items-center justify-start overflow-hidden`}
         style={{
           width: "100%",
           maxWidth: 450,
@@ -114,11 +114,11 @@ export default function LoginForm() {
           placeholderTextColor={missingFields.email ? "red" : "gray"}
           underlineColorAndroid="transparent"
           style={{
-            fontSize: 20,
+            fontSize: 16,
             color: Colors[theme ?? "light"].text,
             height: "90%",
-            width: "80%",
-            marginLeft: 5,
+            width: "95%",
+            marginLeft: 4,
           }}
         />
       </View>
@@ -149,16 +149,16 @@ export default function LoginForm() {
           value={password}
           secureTextEntry={showPassword}
           style={{
-            fontSize: 20,
+            fontSize: 16,
             color: Colors[theme ?? "light"].text,
-            width: "80%",
+            width: "85%",
             height: "90%",
-            marginLeft: 5,
+            marginLeft: 4,
           }}
         />
         <TouchableOpacity
           style={{
-            marginLeft: 20,
+            marginLeft: 4,
           }}
           onPress={() => setShowPassword(!showPassword)}
         >
@@ -185,9 +185,9 @@ export default function LoginForm() {
         </View>
       </TouchableOpacity>
       <View className="mx-auto flex flex-row justify-center items-center mt-40">
-        <Text className="text-lg mr-1">Don’t have an account?</Text>
+        <Text className="text-sm mr-1">Don’t have an account?</Text>
         <Link href={"/register"}>
-          <Text className="text-[#5B37B7] text-bold text-lg">Register</Text>
+          <Text className="text-[#5B37B7] text-bold text-sm">Register</Text>
         </Link>
       </View>
       {showAlert && (
