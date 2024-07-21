@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import {
   Alert,
+  Platform,
   SafeAreaView,
   TouchableOpacity,
   useColorScheme,
@@ -67,8 +68,8 @@ export default function Transactions() {
             justifyContent: "space-between",
             flexDirection: "row",
             alignItems: "center",
-            padding: 10,
-            paddingTop: 54,
+            paddingHorizontal: 10,
+            paddingTop: Platform.OS === "android" ? 50 : "auto",
           }}
         >
           <Text style={{ fontWeight: "bold", fontSize: 20 }}>Transactions</Text>

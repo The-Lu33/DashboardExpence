@@ -5,7 +5,7 @@ import data from "@/utils/example/data.json";
 import { ItemMovementInterface } from "@/types/types";
 import { useMemo, useState } from "react";
 import SwitchSelector from "react-native-switch-selector";
-import { SafeAreaView, useColorScheme } from "react-native";
+import { Platform, SafeAreaView, useColorScheme } from "react-native";
 import Colors from "@/constants/Colors";
 import Pie from "@/components/charts/pie";
 type PieDataItem = {
@@ -97,7 +97,7 @@ export default function Report() {
     >
       <View
         style={{
-          paddingTop: 54,
+          paddingTop: Platform.OS === "android" ? 50 : "auto",
           paddingHorizontal: 10,
           marginBottom: 10,
         }}

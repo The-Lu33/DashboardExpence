@@ -1,7 +1,8 @@
-import { FlatList, Text, View } from "react-native";
+import { FlatList, View } from "react-native";
 import ItemMovement from "./item-movement";
 import { ItemMovementInterface } from "@/types/types";
 import data from "@/utils/example/data.json";
+import { Text } from "../Themed";
 export default function RecentMovement() {
   const movement: ItemMovementInterface[] = data as ItemMovementInterface[];
 
@@ -14,6 +15,7 @@ export default function RecentMovement() {
         data={movement}
         renderItem={({ item }) => (
           <ItemMovement
+            ListHeade
             type_move={item.type_move}
             id={item.id}
             category={item.category}

@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   useColorScheme,
   TouchableOpacity,
+  Platform,
 } from "react-native";
 
 export default function User() {
@@ -21,7 +22,7 @@ export default function User() {
     >
       <View
         style={{
-          paddingTop: 54,
+          paddingTop: Platform.OS === "android" ? 50 : "auto",
           paddingHorizontal: 10,
           marginBottom: 10,
         }}
