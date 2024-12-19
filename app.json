@@ -1,17 +1,13 @@
 {
   "expo": {
-    "name": "DashboardExpence",
-    "slug": "DashboardExpence",
+    "name": "Personal_Dashboard",
+    "slug": "Personal_Dashboard",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.jpg",
-      "resizeMode": "contain",
-      "backgroundColor": "#202A4D"
-    },
+    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -28,8 +24,15 @@
     },
     "plugins": [
       "expo-router",
-      "expo-secure-store",
-      "expo-font"
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
