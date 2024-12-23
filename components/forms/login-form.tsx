@@ -14,7 +14,7 @@ import useAuth from "@/hooks/useAuth";
 
 export default function LoginForm() {
   const theme = useColorScheme();
-  const { login } = useAuth();
+  const { login, loginWhitGoogle } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
@@ -188,7 +188,7 @@ export default function LoginForm() {
         <View className="w-full flex mt-5 justify-center items-center">
           <Text className="text-[#999999] ">Or</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={loginWhitGoogle}>
           <View className="w-[90%] flex justify-center items-center mt-5 h-16 mx-auto rounded-xl bg-[#f0eff1]">
             <Text className="text-2xl text-[#5B37B7]">Google</Text>
           </View>

@@ -1,0 +1,166 @@
+[
+  {
+    "id": "2",
+    "type_move": "INCOME",
+    "category": "FREELANCE",
+    "description": "Software",
+    "mount": 500,
+    "time": "05:00",
+    "date": "2 abril 2024"
+  },
+  {
+    "id": "1",
+    "type_move": "EXPENSE",
+    "category": "SHOPPING",
+    "description": "Lenceria",
+    "mount": -220.0,
+    "time": "10:00",
+    "date": "3 abril 2024"
+  },
+
+  {
+    "id": "4",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -34.0,
+    "time": "10:00",
+    "date": "4 abril 2024"
+  },
+  {
+    "id": "5",
+    "type_move": "INCOME",
+    "category": "FREELANCE",
+    "description": "Software",
+    "mount": 5000,
+    "time": "05:00",
+    "date": "5 abril 2024"
+  },
+  {
+    "id": "6",
+    "type_move": "EXPENSE",
+    "category": "SHOPPING",
+    "description": "Lenceria",
+    "mount": -54.0,
+    "time": "10:00",
+    "date": "7 abril 2024"
+  },
+
+  {
+    "id": "3",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -1222.0,
+    "time": "10:00",
+    "date": "7 abril 2024"
+  },
+  {
+    "id": "7",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -32.0,
+    "time": "10:00",
+    "date": "8 abril 2024"
+  },
+  {
+    "id": "8",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -65.0,
+    "time": "10:00",
+    "date": "8 abril 2024"
+  },
+  {
+    "id": "9",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -12.0,
+    "time": "10:00",
+    "date": "8 abril 2024"
+  },
+  {
+    "id": "11",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -32.0,
+    "time": "10:00",
+    "date": "8 abril 2024"
+  },
+  {
+    "id": "12",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -43.0,
+    "time": "10:00",
+    "date": "8 abril 2024"
+  },
+  {
+    "id": "13",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -54.0,
+    "time": "10:00",
+    "date": "8 abril 2024"
+  },
+  {
+    "id": "14",
+    "type_move": "EXPENSE",
+    "category": "FOOD",
+    "description": "Chuleta",
+    "mount": -55.0,
+    "time": "10:00",
+    "date": "8 abril 2024"
+  },
+  {
+    "id": "15",
+    "type_move": "INCOME",
+    "category": "SALARY",
+    "description": "Chuleta",
+    "mount": 500.0,
+    "time": "10:00",
+    "date": "9 abril 2024"
+  },
+  {
+    "id": "16",
+    "type_move": "EXPENSE",
+    "category": "SHOPPING",
+    "description": "Lenceria",
+    "mount": -544.0,
+    "time": "10:00",
+    "date": "7 abril 2024"
+  },
+  {
+    "id": "17",
+    "type_move": "INCOME",
+    "category": "SALARY",
+    "description": "Lenceria",
+    "mount": 44.0,
+    "time": "10:00",
+    "date": "7 abril 2024"
+  },
+  {
+    "id": "18",
+    "type_move": "EXPENSE",
+    "category": "SUBSCRIPTION",
+    "description": "NETFILX",
+    "mount": -44.0,
+    "time": "10:00",
+    "date": "7 abril 2024"
+  },
+  {
+    "id": "19",
+    "type_move": "EXPENSE",
+    "category": "TRANSPORTATION",
+    "description": "Taxi",
+    "mount": -44.0,
+    "time": "10:00",
+    "date": "7 abril 2024"
+  }
+]

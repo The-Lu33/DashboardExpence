@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Personal_Dashboard",
+    "name": "Personal Dashboard",
     "slug": "Personal_Dashboard",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,9 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.thelu.PersonalDashboard"
     },
     "android": {
+      "package": "com.thelu.PersonalDashboard",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"

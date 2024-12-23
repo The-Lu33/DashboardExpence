@@ -12,7 +12,7 @@ export default function AppNav() {
     if (!sessionToken && !user) {
       router.replace("/(auth)/login");
     } else {
-      router.replace("/(tabs)/explore");
+      router.replace("/(tabs)/home");
     }
   }, [sessionToken, user]);
 
